@@ -1,0 +1,632 @@
+:root{
+    --nav-color: #400094;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    font-family: sans-serif;
+
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* -------------------------- 
+Start Navigation Bar Section 
+-----------------------------*/
+
+.header{
+    width: 80%;
+    height: 100px;
+    background-color: var(--nav-color);
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+    
+    z-index: 999;
+
+    transition: top 0.5s;
+}
+
+.header > .title{
+    width: 300px;
+    height: 100%;
+
+    padding-left: 40px;
+
+    display: flex;
+
+    cursor: pointer;
+}
+
+.header > .title > div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header > .title > .title-icon > .fas{
+    font-size: 20px;
+}
+
+.header > .title > .title-text > h1{
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0.4px;
+
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+    margin-bottom: 3px;
+
+    opacity: 0.9;
+}
+
+.header ul{
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.header > ul{
+    display: flex;
+    align-items: center;
+}
+
+.header > ul > li{
+    font-size: 15px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.header > ul > li:hover:nth-of-type(1) > a,.header > ul > li:hover:nth-of-type(2),.header > ul > li:hover:nth-of-type(3),
+.header > ul > li:nth-of-type(1) > a + ul > li:hover{
+    color: rgb(255, 169, 154);
+    transition: color 0.3s;
+}
+
+.header > ul > li:hover:nth-of-type(5),.header > ul > li:hover:nth-of-type(4) + li:nth-of-type(5){
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.header > ul > li .fas{
+    font-size: 22px;
+}
+
+.header > ul > li:nth-of-type(4) span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: inline-block;
+    
+    overflow: hidden;
+}
+
+.header > ul > li:nth-of-type(4) span .fas{
+    font-size: 32px;
+}
+
+.header > ul > li:nth-of-type(1){
+    position: relative;
+}
+
+.header > ul > li:nth-of-type(1) > a + ul{
+    width: 180px;
+    background-color: var(--nav-color);
+    text-align: right;
+
+    padding: 30px 10px 10px 10px;
+    
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    right: -10px;
+
+    z-index: 999;
+}
+
+.header > ul > li:nth-of-type(1) > a + ul > li{
+    line-height: 28px;
+}
+
+.header > ul > li:hover:nth-of-type(1) > a + ul{
+    display: block;
+}
+
+/* ------------------------ 
+End Navigation Bar Section 
+-------------------------- */
+
+/* ----------------------- 
+Start Cover Video Section 
+------------------------- */
+.content{
+    width: 100%;
+    height: 120vh;
+    background: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content > video{
+    width: 100%;
+    height: 160%;
+    object-fit: cover;
+
+    position: fixed;
+    top: 0;
+
+    z-index: -1;
+}
+
+.content > .content-text{
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    opacity: 0;
+}
+
+.content.myani > .content-text{
+    animation: ani 2s 1 ease;
+
+    opacity: 1;
+}
+
+.content > .content-text > img{
+    width: 150px;
+}
+
+.content > .content-text > h1{
+    font-size: 60px;
+    letter-spacing: 2px;
+
+    padding: 0;
+    margin: 0;
+}
+
+.content > .content-text > p{
+    font-size: 22px;
+
+    margin: 20px 0;
+}
+
+.content > .content-text > a{
+    background-color: #fff;
+
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 0.3px;
+    color: #333;
+    
+    border: 1px solid #fff;
+
+    padding: 15px 25px;
+
+    transition: all 0.3s;
+}
+
+.content > .content-text > a:hover{
+    background-color: transparent;
+    color: #fff;
+}
+
+/* ----------------------- 
+End Cover Video Section 
+------------------------- */
+
+/* ----------------------- 
+Start Sale Category Section 
+------------------------- */
+
+.sale{
+    width: 100%;
+    height: 60vh;
+    background-color: #fff;
+
+    position: relative;
+}
+
+.sale > .sale-content{
+    width: 80%;
+    height: 80vh;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: absolute;
+    top: -20vh;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.sale > .sale-content > h1{
+    color: var(--nav-color);
+    
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sale > .sale-content > .sale-categories{
+    width: 90%;
+    height: 60vh;
+
+    margin-top: 20px;
+
+    display: flex;
+}
+
+.sale > .sale-content > .sale-categories > .card{
+    width: 24%;
+    height: 100%;
+
+    margin-right: 5px;
+
+    cursor: pointer;
+}
+
+.sale > .sale-content > .sale-categories > .card > .img-box{
+    width: 100%;
+    height: 336px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.sale > .sale-content > .sale-categories > .card > .img-box::before{
+    content: "";
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    z-index: 1;
+
+    transition: all 0.5s ease;
+}
+
+.sale > .sale-content > .sale-categories > .card:hover > .img-box::before{
+    left: 0;
+}
+
+.sale > .sale-content > .sale-categories > .card > .img-box > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: all 0.75s ease;
+}
+
+.sale > .sale-content > .sale-categories > .card:hover > .img-box > img{
+    transform: scale(1.1);
+}
+
+.sale > .sale-content > .sale-categories > .card > .text-box{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sale > .sale-content > .sale-categories > .card > .text-box > p{
+    font-size: 19px;
+    font-weight: 600;
+    color: red;
+
+    margin: 10px 0;
+}
+
+.sale > .sale-content > .sale-categories > .card > .text-box > a{
+    text-decoration: underline;
+}
+
+/* ----------------------- 
+End Sale Category Section 
+------------------------- */
+
+/* ------------------ 
+Start Vendor Section 
+-------------------- */
+
+.vendor{
+    width: 100%;
+    height: 90vh;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vendor > .vendor-container{
+    width: 500px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    opacity: 0;
+}
+
+.vendor.myani > .vendor-container{
+    animation: ani 2s 1 ease;
+
+    opacity: 1;
+}
+
+.vendor > .vendor-container > img{
+    width: 180px;
+}
+
+.vendor > .vendor-container > h4{
+    font-size: 30px;
+    color: var(--nav-color);
+    
+    padding: 0;
+    margin: 0;
+
+    opacity: 0.8;
+}
+
+.vendor > .vendor-container > p{
+    line-height: 24px;
+    text-align: center;
+}
+
+.vendor > .vendor-container > a{
+    background-color: rgb(219, 86, 63);
+
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 0.3px;
+    color: #fff;
+    
+    padding: 15px 25px;
+
+    transition: all 0.5s;
+}
+
+.vendor > .vendor-container > a:hover{
+    background-color: var(--nav-color);
+}
+
+/* ------------------ 
+End Vendor Section 
+-------------------- */
+
+/* ---------------------------- 
+Start Tradational Market Section 
+------------------------------- */
+
+.bring{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bring > .bring-container{
+    width: 90%;
+    height: 90vh;
+    border: 1px solid tomato;
+
+    margin: auto;
+
+    display: flex;
+}
+
+.bring > .bring-container > div{
+    width: 50%;
+    height: 100%;
+}
+
+.bring > .bring-container > .img-box > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bring > .bring-container > .text-box{
+    border-left: 1px solid tomato;
+
+    padding: 0 120px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    opacity: 0;
+}
+
+.bring.myani > .bring-container > .text-box{
+    animation: ani 2s 1 ease;
+
+    opacity: 1;
+}
+
+.bring > .bring-container > .text-box > h1{
+    color: var(--nav-color);
+    
+    padding: 0;
+    margin: 0;
+}
+
+.bring > .bring-container > .text-box > p{
+    letter-spacing: 0.4px;
+    line-height: 24px;
+
+    margin-top: 20px;
+}
+
+/* ---------------------------- 
+End Tradational Market Section 
+------------------------------- */
+
+/* --------------- 
+Start Icon Section 
+----------------- */
+
+.icon{
+    width: 100%;
+    height: 17vh;
+
+    opacity: 0.7;
+}
+
+.icon > .icon-box{
+    width: 90%;
+    height: 100%;
+
+    margin: auto;
+}
+
+.icon > .icon-box > .fas{
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.icon > .icon-box > h1{
+    font-size: 20px;
+    letter-spacing: 0.4px;
+
+    padding: 0;
+    margin: 5px 0;
+}
+
+/* --------------- 
+End Icon Section 
+----------------- */
+
+/* ----------------- 
+Start Footer Section 
+------------------- */
+
+.footer{
+    width: 100%;
+    height: 50vh;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    opacity: 0.7;
+}
+
+.footer > div{
+    width: 90%;
+}
+
+.footer > .first-row{
+    height: 40vh;
+
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-width: 1px 0 1px 0;
+
+    display: flex;
+}
+
+.footer > .first-row > ul{
+    width: 25%;
+    list-style: none;
+
+    padding: 40px 0 0 0;
+    margin: 0;
+}
+
+.footer > .first-row > ul:nth-of-type(1){
+    width: 30%;
+}
+
+.footer > .first-row > ul > li{
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    line-height: 25px;
+}
+
+.footer > .first-row > ul > li:nth-of-type(1){
+    font-size: 24px;
+    letter-spacing: 0.5px;
+
+    margin-bottom: 10px;
+}
+
+
+.footer > .second-row{
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+}
+
+/* ----------------- 
+End Footer Section 
+------------------- */
+
+.chat-icon{
+    font-size: 20px;
+    background-color: tomato;
+    color: #fff;
+
+    padding: 15px 25px;
+
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+}
+
+.chat-icon > .fas{
+    margin-right: 8px;
+}
+
+@keyframes ani {
+    0%{
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
